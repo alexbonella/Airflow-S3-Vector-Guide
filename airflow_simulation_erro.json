@@ -1,0 +1,57 @@
+[
+  {
+    "fingerprint_id": "c61b0552831a29393a504b28165c711a9e70119e5d63f0556f8903e2c31168f6",
+    "dag_id": "smart_airflow_dag",
+    "task_name": "zero_division",
+    "created_at": "2025-11-15T12:00:00.000000+00:00Z",
+    "task_error": "ZeroDivisionError: division by zero (at smart_airflow_dag.py, line 249)",
+    "logical_date": "2025-11-15T12:00:00.000000+00:00",
+    "log_url": "http://localhost:8080/dags/smart_airflow_dag/grid?dag_run_id=manual__2025-11-15T12%3A00%3A00%2B00%3A00&task_id=zero_division",
+    "status": "resolved",
+    "solution": "Implement a pre-condition check to ensure the divisor is not zero before performing the division."
+  },
+  {
+    "fingerprint_id": "27f05244c4c2a5d9a04f245231a403260718d7831d4596b6b5536412f5a6002f",
+    "dag_id": "smart_airflow_dag",
+    "task_name": "row_count_check",
+    "created_at": "2025-11-15T12:00:00.000000+00:00Z",
+    "task_error": "TypeError: can only concatenate str (not \"int\") to str (at smart_airflow_dag.py, line 257)",
+    "logical_date": "2025-11-15T12:00:00.000000+00:00",
+    "log_url": "http://localhost:8080/dags/smart_airflow_dag/grid?dag_run_id=manual__2025-11-15T12%3A00%3A00%2B00%3A00&task_id=row_count_check",
+    "status": "resolved",
+    "solution": "Ensure all parts of the string concatenation are of type string. Convert numeric types to string using `str()` before concatenation."
+  },
+  {
+    "fingerprint_id": "62e925916c27845f7c3275727b1409ab441beffc7c29e160e9d6d15b2e3f895c",
+    "dag_id": "smart_airflow_dag",
+    "task_name": "dependency_version",
+    "created_at": "2025-11-15T12:00:00.000000+00:00Z",
+    "task_error": "RuntimeError: Dependency 'requests' too old: 2.25.0 < 2.32.0 (at smart_airflow_dag.py, line 271)",
+    "logical_date": "2025-11-15T12:00:00.000000+00:00",
+    "log_url": "http://localhost:8080/dags/smart_airflow_dag/grid?dag_run_id=manual__2025-11-15T12%3A00%3A00%2B00%3A00&task_id=dependency_version",
+    "status": "resolved",
+    "solution": "Update the 'requests' package in the `requirements.txt` file to a version greater than or equal to 2.32.0 and redeploy the environment."
+  },
+  {
+    "fingerprint_id": "0646c078028a39d8837e35e75191752174c0c165d21575812908076045041a54",
+    "dag_id": "smart_airflow_dag",
+    "task_name": "s3_access",
+    "created_at": "2025-11-15T12:00:00.000000+00:00Z",
+    "task_error": "PermissionError: AccessDenied: no permission for s3://secret-bucket/dags/ (at smart_airflow_dag.py, line 280)",
+    "logical_date": "2025-11-15T12:00:00.000000+00:00",
+    "log_url": "http://localhost:8080/dags/smart_airflow_dag/grid?dag_run_id=manual__2025-11-15T12%3A00%3A00%2B00%3A00&task_id=s3_access",
+    "status": "resolved",
+    "solution": "Verify that the IAM role or user associated with the Airflow connection has the necessary S3 permissions (e.g., `s3:GetObject`, `s3:PutObject`) for the specified bucket 'secret-bucket'."
+  },
+  {
+    "fingerprint_id": "c632cf15f1cfcc887bf91a95d6b9e552cc2af1823d34bcad568a77dd44507657",
+    "dag_id": "smart_airflow_dag",
+    "task_name": "db_conn",
+    "created_at": "2025-11-15T12:00:00.000000+00:00Z",
+    "task_error": "ConnectionError: Database connection failed: ECONNREFUSED (at smart_airflow_dag.py, line 289)",
+    "logical_date": "2025-11-15T12:00:00.000000+00:00",
+    "log_url": "http://localhost:8080/dags/smart_airflow_dag/grid?dag_run_id=manual__2025-11-15T12%3A00%3A00%2B00%3A00&task_id=db_conn",
+    "status": "resolved",
+    "solution": "Check the database connection details in the Airflow connection settings. Ensure the host is reachable from the Airflow worker, the port is correct, and there are no firewall rules blocking the connection."
+  }
+]
