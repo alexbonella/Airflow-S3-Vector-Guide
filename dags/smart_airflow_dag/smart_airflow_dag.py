@@ -17,7 +17,6 @@ from airflow.utils.trigger_rule import TriggerRule
 logger = logging.getLogger(__name__)
 
 MODEL_ID = "cohere.embed-v4:0"
-REGION_NAME = 'us-east-1'
 VECTOR_BUCKET = Variable.get("VECTOR_BUCKET")
 VECTOR_INDEX = Variable.get("VECTOR_INDEX")
 AWS_ACCESS_KEY = Variable.get("AWS_ACCESS_KEY")
