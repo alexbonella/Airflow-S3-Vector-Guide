@@ -43,13 +43,13 @@ Errors are structured and stored with their solutions. See `airflow_simulation_e
 
 ## 📸 Screenshots
 
-### Architecture & Flow
+### dependency_version error
 ![Architecture](media/1.png)
 
-### Error Detection
+### S3 access error
 ![Error Log](media/2.png)
 
-### Automated Solution Hint
+### DBT Conn Error
 ![Solution Hint](media/3.png)
 
 ## 📋 Requirements
@@ -62,7 +62,7 @@ Errors are structured and stored with their solutions. See `airflow_simulation_e
 
 This solution relies on **AWS S3 Vectors** (preview/feature) to store and retrieve error embeddings.
 
-🔗 **[Official AWS S3 Vectors Documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors-indexes.html)**
+🔗 **[Official AWS S3 Vectors Documentation](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-vectors.html)**
 
 ### Step 1: Create a Vector Bucket
 1.  Go to the S3 Console.
